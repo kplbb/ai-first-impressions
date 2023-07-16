@@ -1,8 +1,5 @@
-import React from "react";
-// import { NavLink } from 'react-router-dom';	<NavLink to="/">Home</NavLink>
+import React from 'react'
 
-const Loading = () => {
-  return <>Loading animation</>;
-};
-
-export default Loading;
+export default function Loading() {
+  return <div>Loading</div>
+}
