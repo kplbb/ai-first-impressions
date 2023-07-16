@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ResultWordCloud from '../components/ResultWordCloud'
 import loadingBot from '../assets/gpt_02.png'
+import './Result.css'
 const style = {
   display: 'block',
 }
@@ -10,25 +11,38 @@ const sentenceStyle = {
   padding: '10%',
   backgroundColor: '#f2f7ff',
   borderRadius: '10px',
-  marginBottom: '10px',
+  marginBottom: '15px',
 }
 const Result = () => {
   return (
     <div className="container">
-      <div className="banner" style={{ display: 'block' }}>
-        당신의 첫인상은?
+      <div className="banner">
+        {/* style={{ display: 'block' }} */}
+        <div className="HeadText">당신의 첫인상은?</div>
         {/* <div style={style}> */}
         <ResultWordCloud />
         {/* </div> */}
         {/* style={{ height: '200px', objectFit: 'auto' }} /> */}
-        <img
+        {/* <div class="single-line">
+          <img src={loadingBot} style={{ width: '30%' }} />
+          <h1 data-title="The final frontier">
+            <span> 애교넘치는 호감형!</span>
+          </h1>
+        </div> */}
+        <div className="containerr">
+          <div class="imgg">
+            <img src={loadingBot} style={{ width: '30%' }} />
+            <div className="text">애교넘치는 호감형!</div>
+          </div>
+        </div>
+        {/* <img
           src="https://howtodrawforkids.com/wp-content/uploads/2017/03/how-to-draw-a-face-step-by-step.jpg"
           style={{ width: '50%', borderRadius: '50%' }}
         />
         <div>
           <img src={loadingBot} style={{ width: '30%' }} />
           애교넘치는 호감형!
-        </div>
+        </div> */}
         <div style={sentenceStyle}>
           인공지능이 판단한 당신의 첫인상은 '애교넘치는 호감형' 입니다
         </div>
@@ -43,6 +57,13 @@ const Result = () => {
         <div style={sentenceStyle}>
           마지막으로 비슷한 분위기가 느껴지는 연예인은 김세정입니다.
         </div>
+        {/* <div className="summary_container">
+          <div className="sectionOne"></div>
+          <div className="sectionTwo"></div> */}
+        {/* <div> */}
+        <div className="ff">A</div> <div className="gg">B</div>
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </div>
   )

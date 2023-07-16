@@ -1,0 +1,49 @@
+.containerr {
+  position: relative;
+  margin-bottom: 20px;
+}
+.imgg {
+  margin-left: -70%;
+  /* left: 10px; */
+  /* top: 20px; */
+  z-index: 1;
+}
+.text {
+  position: absolute;
+  left: 20px;
+  top: 101px;
+  z-index: 2;
+  font-size: 34px;
+  font-weight: bolder;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  padding-bottom: 4px;
+}
+.summary_container {
+}
+.sectionOne {
+  display: inline-block;
+  /* margin: 5px; */
+  background-color: gray;
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+}
+.sectionTwo {
+  display: inline-block;
+  /* margin: 5px; */
+  background-color: gray;
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+}
+.ff {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+.gg {
+  width: 50%;
+  display: inline-block;
+  float: right;
+}

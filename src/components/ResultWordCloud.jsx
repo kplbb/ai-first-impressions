@@ -50,36 +50,6 @@ export default function ResultWordCloud() {
             Rest
           </a>
         </li>
-        <li>
-          <a href="#" data-weight="9">
-            JavaScript
-          </a>
-        </li>
-        <li>
-          <a href="#" data-weight="3">
-            Animation
-          </a>
-        </li>
-        <li>
-          <a href="#" data-weight="7">
-            React
-          </a>
-        </li>
-        <li>
-          <a href="#" data-weight="8">
-            CSS
-          </a>
-        </li>
-        <li>
-          <a href="#" data-weight="1">
-            Cache
-          </a>
-        </li>
-        <li>
-          <a href="#" data-weight="3">
-            Less
-          </a>
-        </li>
       </ul>
     </div>
   )

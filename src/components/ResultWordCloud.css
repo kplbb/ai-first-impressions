@@ -5,8 +5,8 @@ ul.cloud {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  line-height: 2.75rem;
-  width: 450px;
+  line-height: 2.4rem;
+  max-width: 300px;
 }
 
 ul.cloud a {
@@ -15,7 +15,7 @@ ul.cloud a {
       --size: attr(data-weight number); 
       */
   --size: 4;
-  --color: #a33;
+  --color: #b5ceff;
   color: var(--color);
   font-size: calc(var(--size) * 0.25rem + 0.5rem);
   display: block;
@@ -62,20 +62,22 @@ ul[data-show-value] a::after {
 }
 
 ul.cloud li:nth-child(2n + 1) a {
-  --color: #181;
+  --color: #b5ceff;
 }
 ul.cloud li:nth-child(3n + 1) a {
   --color: #33a;
+  padding: 0px 20px;
 }
 ul.cloud li:nth-child(4n + 1) a {
-  --color: #c38;
+  --color: #0057ff;
+  padding: 0px 50px;
 }
 
 ul.cloud a:focus {
   outline: 1px dashed;
 }
 
-ul.cloud a::before {
+/* ul.cloud a::before {
   content: '';
   position: absolute;
   top: 0;
@@ -86,12 +88,12 @@ ul.cloud a::before {
   transform: translate(-50%, 0);
   opacity: 0.15;
   transition: width 0.25s;
-}
+} */
 
-ul.cloud a:focus::before,
+/* ul.cloud a:focus::before,
 ul.cloud a:hover::before {
   width: 100%;
-}
+} */
 
 @media (prefers-reduced-motion) {
   ul.cloud * {
