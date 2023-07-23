@@ -1,16 +1,20 @@
-import React from "react";
+import React from 'react'
+import loadingAnimation from '../assets/loading_bg.png'
 
 const NoMatch = () => {
   return (
     <div>
       <div className="container">
-        <div className="error-page">
-          <h1 className="error-code">404</h1>
-          <p className="error-text">Page not found</p>
+        <div className="banner" style={{ height: '70vh' }}>
+          <img src={loadingAnimation} className="" style={{ width: '70%' }} />
+          <div className="HeadText">
+            404 <br />
+            Page not found
+          </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NoMatch;
+export default NoMatch

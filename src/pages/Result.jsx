@@ -4,13 +4,14 @@ import ResultWordCloud from '../components/ResultWordCloud'
 import loadingBot from '../assets/gpt_02.png'
 import './Result.css'
 import textBubble from '../assets/text_bg.png'
-
-// import { FaLink } from 'react-icons/fa'
+import { useLocation } from 'react-router'
 import { BsLink45Deg } from 'react-icons/bs'
 
 import { BsFillShareFill } from 'react-icons/bs'
 
 const Result = () => {
+  const { state } = useLocation()
+  console.log(state)
   return (
     <div className="container">
       <div className="banner">
@@ -67,13 +68,13 @@ const Result = () => {
           </div>
         </div>
 
-        <div class="flex-container">
-          <div class="flex-item-left">
+        <div className="flex-container">
+          <div className="flex-item-left">
             내 결과 공유하기 <BsFillShareFill />
           </div>
         </div>
 
-        <section class="share-icon-container">
+        <section className="share-icon-container">
           <div className="icon">
             <BsLink45Deg style={{ height: '40px', width: '40px' }} />
           </div>
