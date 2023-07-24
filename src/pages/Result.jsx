@@ -8,7 +8,6 @@ import { useLocation } from 'react-router'
 import { BsLink45Deg } from 'react-icons/bs'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import Modal from '../components/Modal'
 import { BsFillShareFill } from 'react-icons/bs'
 import KakaoLogo from '../assets/KakaoLogo.png'
 const { Kakao } = window
