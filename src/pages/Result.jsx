@@ -8,8 +8,10 @@ import { useLocation } from 'react-router'
 import { BsLink45Deg } from 'react-icons/bs'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import Modal from '../components/Modal'
 import { BsFillShareFill } from 'react-icons/bs'
+import KakaoLogo from '../assets/KakaoLogo.png'
+const { Kakao } = window
 
 const Result = () => {
   const [data, setData] = useState()
@@ -23,6 +25,11 @@ const Result = () => {
       setData(state)
     }
   }, [state])
+  useEffect(() => {
+    Kakao.cleanup()
+    Kakao.init('a04b2b086e1490965f9e5456d3fb6345')
+    console.log(Kakao.isInitialized()) //true
+  }, [])
 
   const copyLink = (e) => {
     e.preventDefault()
@@ -40,6 +47,48 @@ const Result = () => {
       console.error('Failed to copy URL to clipboard: ', error)
     }
     document.body.removeChild(input)
+  }
+  const shareKakao = () => {
+    // const realUrl = 'https://mm-test-maker.web.app/'
+    const realUrl = 'google.ca'
+    // 로컬 주소 (localhost 3000 같은거)
+    // const resultUrl = window.location.href
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '오늘의 디저트',
+        description: '아메리카노, 빵, 케익',
+        imageUrl:
+          'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      social: {
+        likeCount: 1234,
+        commentCount: 431,
+        sharedCount: 8493,
+        viewCount: 47298,
+        subscriberCount: 3489,
+      },
+      buttons: [
+        {
+          title: 'see results!',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        {
+          title: '나도 해보기!',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+      ],
+    })
   }
   return (
     <div className="container">
@@ -110,7 +159,18 @@ const Result = () => {
                 onClick={(e) => copyLink(e)}
               />
             </div>
-            <div className="icon"></div>
+            <div className="icon">
+              {/* <Modal /> */}
+              <img
+                src={KakaoLogo}
+                className=""
+                style={{ width: '10%' }}
+                alt={'Kakao Logo'}
+                onClick={() => {
+                  shareKakao()
+                }}
+              />
+            </div>
             <div className="icon"></div>
           </section>
         </>
