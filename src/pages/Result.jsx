@@ -10,14 +10,16 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { BsFillShareFill } from 'react-icons/bs'
 import KakaoLogo from '../assets/KakaoLogo.png'
+import html2canvas from 'html2canvas'
+import { BsDownload } from 'react-icons/bs'
+
 const { Kakao } = window
 
 const Result = () => {
   const [data, setData] = useState()
   const [resultId, setResultId] = useState()
-
   const { state } = useLocation()
-
+  const iconSize = 50
   useEffect(() => {
     if (state != undefined || null) {
       console.log(state)
@@ -55,8 +57,8 @@ const Result = () => {
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: '오늘의 디저트',
-        description: '아메리카노, 빵, 케익',
+        title: 'GPT야 첫인상을 알려줘',
+        description: '지금 바로 첫인상을 물어보세요!',
         imageUrl:
           'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
         link: {
@@ -89,8 +91,19 @@ const Result = () => {
       ],
     })
   }
+
+  const downloadImage = () => {
+    const table = document.getElementById('table-container')
+
+    html2canvas(table).then(function (canvas) {
+      const link = document.createElement('a')
+      link.download = 'result.png'
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    })
+  }
   return (
-    <div className="container">
+    <div className="container" id="table-container">
       <div className="banner">
         {/* {data !== null && data !== undefined ? ( */}
         <>
@@ -154,7 +167,8 @@ const Result = () => {
           <section className="share-icon-container">
             <div className="icon">
               <BsLink45Deg
-                style={{ height: '40px', width: '40px' }}
+                size={iconSize}
+                // style={{ height: '40px', width: '40px' }}
                 onClick={(e) => copyLink(e)}
               />
             </div>
@@ -163,14 +177,16 @@ const Result = () => {
               <img
                 src={KakaoLogo}
                 className=""
-                style={{ width: '10%' }}
+                style={{ width: '15%' }}
                 alt={'Kakao Logo'}
                 onClick={() => {
                   shareKakao()
                 }}
               />
             </div>
-            <div className="icon"></div>
+            <div className="icon">
+              <BsDownload size={iconSize} onClick={() => downloadImage()} />
+            </div>
           </section>
         </>
         {/* ) : ( */}
