@@ -1,0 +1,168 @@
+// 레이아웃 - 위치설정
+.banner{
+  position: relative;
+}
+.numText{
+  position: absolute;
+  top: 50px;
+}
+// 모션 텍스트 효과
+.motionText{
+  position: relative;
+  font-size: 20px;
+}
+.motionText li:nth-child(odd){
+  color: #0057FF;
+  font-weight: bold;
+  animation: scale 3s linear infinite;
+}
+.motionText li:nth-child(even){
+  color: #A7C5FF;
+}
+.motionText .colorVo{
+  color: #6271DD !important;
+}
+
+.motionText {
+  margin: 0;
+  list-style: none;
+  transform-style: preserve-3d;
+  animation: three-dimensions-circle 20s linear infinite;
+}
+.motionText li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+}
+@for $i from 1 through 12 {
+  .motionText li:nth-child(#{$i}) {
+    transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-260px) rotateX(90deg);
+  }
+}
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    font-size: 20px;
+  }
+  25% {
+    font-size: 26px;
+  }
+  50%{
+    font-size: 24px;
+  }
+  100% {
+    font-size: 20px;
+  }
+}
+
+// @keyframes neon {
+//   0%,
+//   100% {
+//     text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+//     color: #FED128;
+//   }
+//   50% {
+//     text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+//     color: #806914;
+//   }
+// }
+
+// @keyframes flux {
+//   0%,
+//   100% {
+//     text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+//     color: #28D7FE;
+//   }
+//   50% {
+//     text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+//     color: #146C80;
+//   }
+// }
+
+// 모션 이미지 효과
+.motionImg{
+  width: 200px;
+}
+.robo {
+  position: relative;
+  top: 0;
+  width: 100%;
+  transform: translateY(-120px);
+  animation: move 1s ease-in Infinite Alternate;
+}
+        
+@keyframes move {
+  0% {
+    top:0px;
+  }
+  95% {
+   
+  }
+  to {
+    top:100px;
+  } 
+}
+
+// 제목과 btn
+.bottomText{
+  position: absolute;
+  bottom: 120px;
+  text-align: center;
+}
+.HomeBtn {
+  margin: 20px 0 10px 0;
+  height: 45px;
+  width: 130%;
+  transform: translateX(-12%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.HomeBtn .inner {
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background-image: linear-gradient(
+    to right,
+    #3955cf 0%,
+    #6a77e0 20%,
+    #3ca7f4 100%
+  );
+  transition: all 0.4s;
+}
+.HomeBtn:hover .inner {
+  left: 0;
+}
+.HomeBtn button {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+// 광고영역
+.ad{
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #ccc;
+  text-align: center;
+}
