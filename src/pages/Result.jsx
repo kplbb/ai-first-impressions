@@ -8,21 +8,29 @@ import { useLocation } from 'react-router'
 import { BsLink45Deg } from 'react-icons/bs'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
 import { BsFillShareFill } from 'react-icons/bs'
+import KakaoLogo from '../assets/KakaoLogo.png'
+import html2canvas from 'html2canvas'
+import { BsDownload } from 'react-icons/bs'
+
+const { Kakao } = window
 
 const Result = () => {
   const [data, setData] = useState()
   const [resultId, setResultId] = useState()
-
   const { state } = useLocation()
-
+  const iconSize = 50
   useEffect(() => {
     if (state != undefined || null) {
       console.log(state)
       setData(state)
     }
   }, [state])
+  useEffect(() => {
+    Kakao.cleanup()
+    Kakao.init('a04b2b086e1490965f9e5456d3fb6345')
+    console.log(Kakao.isInitialized()) //true
+  }, [])
 
   const copyLink = (e) => {
     e.preventDefault()
@@ -41,8 +49,61 @@ const Result = () => {
     }
     document.body.removeChild(input)
   }
+  const shareKakao = () => {
+    // const realUrl = 'https://mm-test-maker.web.app/'
+    const realUrl = 'google.ca'
+    // 로컬 주소 (localhost 3000 같은거)
+    // const resultUrl = window.location.href
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: 'GPT야 첫인상을 알려줘',
+        description: '지금 바로 첫인상을 물어보세요!',
+        imageUrl:
+          'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      social: {
+        likeCount: 1234,
+        commentCount: 431,
+        sharedCount: 8493,
+        viewCount: 47298,
+        subscriberCount: 3489,
+      },
+      buttons: [
+        {
+          title: 'see results!',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+        {
+          title: '나도 해보기!',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+          },
+        },
+      ],
+    })
+  }
+
+  const downloadImage = () => {
+    const table = document.getElementById('table-container')
+
+    html2canvas(table).then(function (canvas) {
+      const link = document.createElement('a')
+      link.download = 'result.png'
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    })
+  }
   return (
-    <div className="container">
+    <div className="container" id="table-container">
       <div className="banner">
         {/* {data !== null && data !== undefined ? ( */}
         <>
@@ -106,12 +167,26 @@ const Result = () => {
           <section className="share-icon-container">
             <div className="icon">
               <BsLink45Deg
-                style={{ height: '40px', width: '40px' }}
+                size={iconSize}
+                // style={{ height: '40px', width: '40px' }}
                 onClick={(e) => copyLink(e)}
               />
             </div>
-            <div className="icon"></div>
-            <div className="icon"></div>
+            <div className="icon">
+              {/* <Modal /> */}
+              <img
+                src={KakaoLogo}
+                className=""
+                style={{ width: '15%' }}
+                alt={'Kakao Logo'}
+                onClick={() => {
+                  shareKakao()
+                }}
+              />
+            </div>
+            <div className="icon">
+              <BsDownload size={iconSize} onClick={() => downloadImage()} />
+            </div>
           </section>
         </>
         {/* ) : ( */}

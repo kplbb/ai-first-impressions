@@ -5,7 +5,12 @@ import axios from 'axios'
 import ErrorPage from '../components/ErrorPage'
 import loadingAnimation from '../assets/loading_bg.png'
 import loadingBot from '../assets/gpt_02.png'
-import './ResultLoading.scss'
+import './ResultLoading.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import ErrorPage from '../components/ErrorPage'
+import { useLocation } from 'react-router'
+import GoogleAdSense from '../components/GoogleAdSense'
 
 const ResultLoading = ({}) => {
   const [error, setError] = useState(false)
@@ -48,7 +53,23 @@ const ResultLoading = ({}) => {
         <ErrorPage />
       ) : (
         <>
-          <div className="ad"></div>
+          <div className="ad">
+            <GoogleAdSense dataAdSlot="2190219184" />
+            {/* <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1069105273152877"
+              crossOrigin="anonymous"
+            ></script>
+            <ins
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client="ca-pub-1069105273152877"
+              data-ad-slot="2190219184"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> */}
+          </div>
           <div className="container">
             <div className="banner">
               ai 모델링을 통한 첫인상을 분석중입니다....
