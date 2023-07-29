@@ -1,11 +1,11 @@
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import loadingAnimation from '../assets/loading_bg.png'
-import loadingBot from '../assets/gpt_02.png'
-import './ResultLoading.css'
-import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router'
 import axios from 'axios'
 import ErrorPage from '../components/ErrorPage'
-import { useLocation } from 'react-router'
+import loadingAnimation from '../assets/loading_bg.png'
+import loadingBot from '../assets/gpt_02.png'
+import './ResultLoading.scss'
 
 const ResultLoading = ({}) => {
   const [error, setError] = useState(false)
@@ -52,6 +52,7 @@ const ResultLoading = ({}) => {
           <div className="container">
             <div className="banner">
               ai 모델링을 통한 첫인상을 분석중입니다....
+              <div>최대 1분 정도 걸릴 수 있습니다.</div>
               <img src={loadingAnimation} className="loading-animation" />
               <img src={loadingBot} className="loading-bot box bounce-1" />
               <div className="btn btn-1">Loading...</div>
