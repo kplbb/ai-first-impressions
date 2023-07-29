@@ -3,14 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router'
 import axios from 'axios'
 import ErrorPage from '../components/ErrorPage'
+import GoogleAdSense from '../components/GoogleAdSense'
 import loadingAnimation from '../assets/loading_bg.png'
 import loadingBot from '../assets/gpt_02.png'
-import './ResultLoading.css'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import ErrorPage from '../components/ErrorPage'
-import { useLocation } from 'react-router'
-import GoogleAdSense from '../components/GoogleAdSense'
+import './ResultLoading.scss'
 
 const ResultLoading = ({}) => {
   const [error, setError] = useState(false)
