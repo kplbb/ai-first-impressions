@@ -1,45 +1,45 @@
 /* 사진업로드 테이블 */
-table{
+table {
   max-width: 400px;
-  height: 380px;
+  height: 400px;
   position: absolute;
-  top: 100px;
+  top: 60px;
   background-color: rgba(0, 102, 255, 0.05);
   padding: 10px 30px 30px 30px;
   border-radius: 30px;
 }
-table tbody{
+table tbody {
   width: 100%;
   margin: 0 auto;
 }
-table tbody p{
+table tbody p {
   text-align: center;
   font-size: 24px !important;
 }
-table img{
+table img {
   width: 140px;
   object-fit: cover;
-  transform: translate(67%,20px);
+  transform: translate(67%, 20px);
 }
 
-.InputBox input{
+.InputBox input {
   position: relative;
   height: 200px;
 }
-.InputImg{
+.InputImg {
   position: absolute;
   top: 170px;
   transform: translateX(-22px);
 }
 /* 이미지 가이드 */
-.ImageGuide{
+.ImageGuide {
   position: absolute;
   top: 490px;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
 }
-.ImageGuide .HideGuide{
+.ImageGuide .HideGuide {
   position: absolute;
   top: 25px;
   font-size: 12px;
@@ -51,35 +51,35 @@ table img{
   width: 355px;
   transform: translateX(-42px);
 }
-.StrongText{
-  color: #0057FF;
+.StrongText {
+  color: #0057ff;
   font-weight: bolder;
   font-size: 18px;
   transform: translateY(3px);
 }
-.ImageGuide p{
+.ImageGuide p {
   color: #ff0000;
   font-size: 12px;
 }
 /* 이미지 가이드 내용 호버시 보여지도록 */
-.ImageGuide:hover .HideGuide{
+.ImageGuide:hover .HideGuide {
   display: block;
 }
 /* 로봇 이미지 영역 */
-.RoboBox{
+.RoboBox {
   position: absolute;
   top: 500px;
   width: 400px;
   margin-left: 68px;
   margin-top: 65px;
 }
-.RoboBox .robo{
+.RoboBox .robo {
   width: 100%;
   animation: move 1s ease-in Infinite Alternate;
 }
-.RoboBox .motionImg{
+.RoboBox .motionImg {
   width: 200px;
-  transform: translate(20px,-220px);
+  transform: translate(20px, -220px);
 }
 
 /* 로봇 모션 효과 */
@@ -90,21 +90,20 @@ table img{
   transform: translateY(-120px);
   animation: move 1s ease-in Infinite Alternate;
 }
-        
+
 @keyframes move {
   0% {
-    top:100px;
+    top: 100px;
   }
   95% {
-   
   }
   to {
-    top:140px;
-  } 
+    top: 140px;
+  }
 }
 
 // 파일 업로드 스타일 변경
-input[type=file]::file-selector-button {
+input[type='file']::file-selector-button {
   color: #fff;
   font-size: 16px;
   margin: 14px 30px;
@@ -131,32 +130,32 @@ input[type=file]::file-selector-button {
     );
   }
 }
-input[type=file]{
+input[type='file'] {
   width: 300px;
 }
-.InputBox button{
+.InputBox button {
   position: absolute;
 }
-.DeleteBtn{
-  transform: translate(-28px,200px);
+.DeleteBtn {
+  transform: translate(-28px, 200px);
   border: none;
   padding: 8px 10px;
   border-radius: 50px;
   color: #fff;
   font-size: 18px;
   &:hover {
-    background: rgb(77,77,77);
+    background: rgb(77, 77, 77);
     color: #fff;
   }
 }
-.CheckBtn{
-  transform: translate(-71px,200px);
+.CheckBtn {
+  transform: translate(-71px, 200px);
   border: none;
   padding: 4px 6px;
   border-radius: 50px;
   color: #fff;
   font-size: 24px;
-  background-color: #A7C5FF;
+  background-color: #a7c5ff;
   &:hover {
     background: #5064d7;
     color: #fff;

@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import './Upload.scss'
+import imageCompression from 'browser-image-compression'
+import { BiCheck } from 'react-icons/bi'
 import { FaTrash } from 'react-icons/fa'
 import { FaRegQuestionCircle } from 'react-icons/fa'
 import { BiSmile } from 'react-icons/bi'
-import { BiCheck } from 'react-icons/bi'
 import robo from '../assets/gpt_01.png'
 import background from '../assets/upload-bg.png'
+import './Upload.scss'
 
 function Upload() {
+  //이미지 리사이징
+  const actionImgCompress = async (fileSrc) => {
+    const options = {
+      maxSizeMB: 0.1,
+    }
+  }
   //input에서 value를 담기 위한 state 생성
   const [account, setAccount] = useState({
     image: '',
   })
+  const options = {
+    maxSizeMB: 1,
+  }
 
   //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState('')
