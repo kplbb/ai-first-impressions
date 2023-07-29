@@ -44,8 +44,8 @@ const Home = () => {
             나의 첫인상
           </h1>
           <Link to="/upload">
-            <div class="HomeBtn">
-              <div class="inner"></div>
+            <div className="HomeBtn">
+              <div className="inner"></div>
               <button type="submit" onClick={increase}>
                 첫인상 물어보러 가기
               </button>
