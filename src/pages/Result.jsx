@@ -19,7 +19,6 @@ const Result = () => {
   const [data, setData] = useState()
   const [resultId, setResultId] = useState()
   const { state } = useLocation()
-  const iconSize = 50
 
   //url query parameter
   const location = useLocation()
@@ -103,7 +102,7 @@ const Result = () => {
 
     html2canvas(table).then(function (canvas) {
       const link = document.createElement('a')
-      link.download = 'result.png'
+      link.download = 'JudgeBot_result.png'
       link.href = canvas.toDataURL('image/png')
       link.click()
     })
@@ -113,12 +112,13 @@ const Result = () => {
       <div className="banner">
         {/* {data !== null && data !== undefined ? ( */}
         <>
-          <div className="HeadText">당신의 첫인상은?</div>
+          <Link to="/">
+            <div className="HeadText">당신의 첫인상은?</div>
+          </Link>
           <ResultWordCloud />
           <div className="user-img">
             <img src={loadingBot} />
           </div>
-
           <div className="res-container">
             <div className="res-img-container">
               <img src={loadingBot} alt="Image" />
@@ -173,8 +173,8 @@ const Result = () => {
           <section className="share-icon-container">
             <div className="icon">
               <BsLink45Deg
-                size={iconSize}
-                // style={{ height: '40px', width: '40px' }}
+                // size={linkIconSize}
+                style={{ height: '40px', width: '40px' }}
                 onClick={(e) => copyLink(e)}
               />
             </div>
@@ -182,8 +182,7 @@ const Result = () => {
               {/* <Modal /> */}
               <img
                 src={KakaoLogo}
-                className=""
-                style={{ width: '15%' }}
+                style={{ height: '40px', width: '40px' }}
                 alt={'Kakao Logo'}
                 onClick={() => {
                   shareKakao()
@@ -191,7 +190,11 @@ const Result = () => {
               />
             </div>
             <div className="icon">
-              <BsDownload size={iconSize} onClick={() => downloadImage()} />
+              <BsDownload
+                style={{ height: '40px', width: '40px' }}
+                // size={saveImgIconSize}
+                onClick={() => downloadImage()}
+              />
             </div>
           </section>
         </>
