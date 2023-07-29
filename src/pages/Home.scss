@@ -1,26 +1,26 @@
 // 레이아웃 - 위치설정
-.banner{
+.banner {
   position: relative;
 }
-.numText{
+.numText {
   position: absolute;
   top: 50px;
 }
 // 모션 텍스트 효과
-.motionText{
+.motionText {
   position: relative;
   font-size: 20px;
 }
-.motionText li:nth-child(odd){
-  color: #0057FF;
+.motionText li:nth-child(odd) {
+  color: #0057ff;
   font-weight: bold;
   animation: scale 3s linear infinite;
 }
-.motionText li:nth-child(even){
-  color: #A7C5FF;
+.motionText li:nth-child(even) {
+  color: #a7c5ff;
 }
-.motionText .colorVo{
-  color: #6271DD !important;
+.motionText .colorVo {
+  color: #6271dd !important;
 }
 
 .motionText {
@@ -37,7 +37,10 @@
 }
 @for $i from 1 through 12 {
   .motionText li:nth-child(#{$i}) {
-    transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-260px) rotateX(90deg);
+    transform: translate(-50%, -50%)
+      rotate(#{$i * 30 - 30}deg)
+      translateY(-260px)
+      rotateX(90deg);
   }
 }
 @keyframes three-dimensions-circle {
@@ -56,7 +59,7 @@
   25% {
     font-size: 26px;
   }
-  50%{
+  50% {
     font-size: 24px;
   }
   100% {
@@ -89,7 +92,7 @@
 // }
 
 // 모션 이미지 효과
-.motionImg{
+.motionImg {
   width: 200px;
 }
 .robo {
@@ -99,21 +102,20 @@
   transform: translateY(-120px);
   animation: move 1s ease-in Infinite Alternate;
 }
-        
+
 @keyframes move {
   0% {
-    top:0px;
+    top: 0px;
   }
   95% {
-   
   }
   to {
-    top:100px;
-  } 
+    top: 100px;
+  }
 }
 
 // 제목과 btn
-.bottomText{
+.bottomText {
   position: absolute;
   bottom: 120px;
   text-align: center;
@@ -157,12 +159,12 @@
   cursor: pointer;
 }
 // 광고영역
-.ad{
+.ad {
   position: absolute;
   bottom: -30px;
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: #ccc;
+  // background-color: #ccc;
   text-align: center;
 }
