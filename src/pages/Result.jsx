@@ -20,6 +20,12 @@ const Result = () => {
   const [resultId, setResultId] = useState()
   const { state } = useLocation()
   const iconSize = 50
+
+  //url query parameter
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search)
+  const paramValue = queryParams.get('user')
+
   useEffect(() => {
     if (state != undefined || null) {
       console.log(state)

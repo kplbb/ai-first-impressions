@@ -4,50 +4,50 @@ import './ResultWordCloud.css'
 export default function ResultWordCloud() {
   return (
     <div>
-      <ul className="cloud" role="navigation" aria-label="Webdev word cloud">
+      <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
         <li>
           <a href="#" data-weight="4">
-            HTTP
+            해맑다
           </a>
         </li>
         <li>
           <a href="#" data-weight="1">
-            Ember
+            닮은연예인
           </a>
         </li>
         <li>
           <a href="#" data-weight="5">
-            Sass
+            귀엽다
           </a>
         </li>
         <li>
           <a href="#" data-weight="8">
-            HTML
+            밝은
           </a>
         </li>
         <li>
           <a href="#" data-weight="6">
-            FlexBox
+            맞는 유형
           </a>
         </li>
         <li>
           <a href="#" data-weight="4">
-            API
+            애교 많은
           </a>
         </li>
         <li>
           <a href="#" data-weight="5">
-            VueJS
+            호감형
           </a>
         </li>
         <li>
           <a href="#" data-weight="6">
-            Grid
+            어울리는 직업
           </a>
         </li>
         <li>
           <a href="#" data-weight="2">
-            Rest
+            예쁜눈
           </a>
         </li>
       </ul>
