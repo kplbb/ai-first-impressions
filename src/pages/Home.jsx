@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
-import './Home.scss'
+import GoogleAdSense from '../components/GoogleAdSense'
 import bot from '../assets/gpt_01.png'
+import './Home.scss'
 
 const Home = () => {
   const [count, setCount] = useState(0)
@@ -55,7 +56,9 @@ const Home = () => {
       </div>
 
       {/* 광고 영역 */}
-      <div className="ad">광고</div>
+      <div className="ad">
+        <GoogleAdSense dataAdSlot="5314134026" />
+      </div>
     </div>
   )
 }

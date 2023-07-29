@@ -50,7 +50,7 @@ const ResultLoading = ({}) => {
       ) : (
         <>
           <div className="ad">
-            <GoogleAdSense dataAdSlot="2190219184" />
+            <GoogleAdSense dataAdSlot="9452118767" />
             {/* <script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1069105273152877"
