@@ -4,7 +4,7 @@ import './ResultWordCloud.css'
 export default function ResultWordCloud() {
   return (
     <div>
-      <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
+      <ul className="cloud" role="navigation" aria-label="Webdev word cloud">
         <li>
           <a href="#" data-weight="4">
             해맑다
