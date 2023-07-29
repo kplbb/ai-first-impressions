@@ -10,32 +10,35 @@ import background from '../assets/upload-bg.png'
 import './Upload.scss'
 
 function Upload() {
-  //이미지 리사이징
-  const actionImgCompress = async (fileSrc) => {
+  const [file, setFile] = useState(null)
+  const [fileUrl, setFileUrl] = useState('')
+
+  const handleFileOnChange = async (e) => {
+    let file = e.target.files[0] // 입력받은 file객체
+
+    // 이미지 resize 옵션 설정 (최대 width을 140px로 지정)
     const options = {
       maxSizeMB: 0.1,
     }
-  }
-  //input에서 value를 담기 위한 state 생성
-  const [account, setAccount] = useState({
-    image: '',
-  })
-  const options = {
-    maxSizeMB: 1,
-  }
 
-  //파일 미리볼 url을 저장해줄 state
-  const [fileImage, setFileImage] = useState('')
+    try {
+      const compressedFile = await imageCompression(file, options)
+      setFile(compressedFile)
 
-  // 파일 저장
-  const saveFileImage = (e) => {
-    setFileImage(URL.createObjectURL(e.target.files[0]))
+      // resize된 이미지의 url을 받아 fileUrl에 저장
+      const promise = imageCompression.getDataUrlFromFile(compressedFile)
+      promise.then((result) => {
+        setFileUrl(result)
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // 파일 삭제
   const deleteFileImage = () => {
-    URL.revokeObjectURL(fileImage)
-    setFileImage('')
+    URL.revokeObjectURL(fileUrl)
+    setFileUrl('')
   }
 
   // 사진 가이드창 호버시 등장하도록
@@ -59,12 +62,15 @@ function Upload() {
                 </p>
                 <div className="InputBox">
                   <input
-                    id="image"
+                    id="profile_img_upload"
                     name="imgUpload"
                     type="file"
                     accept=".png, .jpeg, .jpg,image/*"
-                    onChange={saveFileImage}
+                    onChange={handleFileOnChange}
                   />
+                  {/* <label for='profile_img_upload'>
+                  <img src={camera} alt="camera" />
+                  </label> */}
                   {/* 체크 클릭시 로딩페이지로 연결 */}
                   <Link to="/loading">
                     <button className="CheckBtn">
@@ -78,8 +84,8 @@ function Upload() {
                     <FaTrash />
                   </button>
                 </div>
-                <div className="InputImg">
-                  {fileImage && <img alt="sample" src={fileImage} />}
+                <div className="InputImg top_bar_profile_img">
+                  <img alt="profile_img" src={fileUrl} />
                 </div>
               </td>
             </tr>
