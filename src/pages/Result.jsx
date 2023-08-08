@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import html2canvas from 'html2canvas'
@@ -18,7 +19,10 @@ const { Kakao } = window
 const Result = () => {
   const [data, setData] = useState()
   const [resultId, setResultId] = useState()
+  const [isUser, setIsUser] = useState(false)
+
   const { state } = useLocation()
+  const { slug } = useParams()
 
   //url query parameter
   const location = useLocation()
@@ -30,7 +34,11 @@ const Result = () => {
       console.log(state)
       setData(state)
     }
-  }, [state])
+    if (slug != undefined || null) {
+      console.log('slug:' + slug)
+    }
+    console.log('queryParams:' + queryParams.get('user'))
+  }, [state, slug, queryParams])
   useEffect(() => {
     Kakao.cleanup()
     Kakao.init('a04b2b086e1490965f9e5456d3fb6345')

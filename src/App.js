@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/loading" element={<ResultLoading />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/result" element={<Result />} />
+          <Route path="/result/:slug" element={<Result />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </Suspense>

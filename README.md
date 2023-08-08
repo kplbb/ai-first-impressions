@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+task-1 : home
+task-2 : upload
+task-3 : loading
+task-4 : result
+task-5 : adsense
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
