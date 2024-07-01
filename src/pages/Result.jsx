@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import html2canvas from 'html2canvas'
@@ -110,7 +109,7 @@ const Result = () => {
           <div className="HeadText">당신의 첫인상은?</div>
           <ResultWordCloud />
           <div className="user-img">
-            <img src={loadingBot} />
+            <img src={loadingBot} alt="" />
           </div>
 
           <div className="res-container">

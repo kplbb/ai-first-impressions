@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import imageCompression from 'browser-image-compression'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+// import imageCompression from 'browser-image-compression'
 import { BiCheck } from 'react-icons/bi'
 import { FaTrash } from 'react-icons/fa'
 import { FaRegQuestionCircle } from 'react-icons/fa'
@@ -11,18 +11,18 @@ import './Upload.scss'
 
 function Upload() {
   //이미지 리사이징
-  const actionImgCompress = async (fileSrc) => {
-    const options = {
-      maxSizeMB: 0.1,
-    }
-  }
+  // const actionImgCompress = async (fileSrc) => {
+  //   const options = {
+  //     maxSizeMB: 0.1,
+  //   }
+  // }
   //input에서 value를 담기 위한 state 생성
-  const [account, setAccount] = useState({
-    image: '',
-  })
-  const options = {
-    maxSizeMB: 1,
-  }
+  // const [account, setAccount] = useState({
+  //   image: '',
+  // })
+  // const options = {
+  //   maxSizeMB: 1,
+  // }
 
   //파일 미리볼 url을 저장해줄 state
   const [fileImage, setFileImage] = useState('')
@@ -114,10 +114,10 @@ function Upload() {
         </div>
         {/* 로봇 이미지 영역 */}
         <div className="RoboBox">
-          <img src={background} />
+          <img src={background} alt="" />
           {/* 모션 이미지 */}
           <div className="motionImg">
-            <img className="robo" src={robo} />
+            <img className="robo" src={robo} alt="" />
           </div>
         </div>
       </div>

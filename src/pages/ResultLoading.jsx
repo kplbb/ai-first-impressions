@@ -31,7 +31,7 @@ const ResultLoading = ({}) => {
           headers: requestHeaders,
           data: state,
         })
-        if (response.response == 200)
+        if (response.response === 200)
           navigate('/result', { state: 'response.data' })
       } catch (error) {
         setError(true)
@@ -70,8 +70,16 @@ const ResultLoading = ({}) => {
             <div className="banner">
               ai 모델링을 통한 첫인상을 분석중입니다....
               <div>최대 1분 정도 걸릴 수 있습니다.</div>
-              <img src={loadingAnimation} className="loading-animation" />
-              <img src={loadingBot} className="loading-bot box bounce-1" />
+              <img
+                src={loadingAnimation}
+                className="loading-animation"
+                alt=""
+              />
+              <img
+                src={loadingBot}
+                className="loading-bot box bounce-1"
+                alt=""
+              />
               <div className="btn btn-1">Loading...</div>
             </div>
           </div>

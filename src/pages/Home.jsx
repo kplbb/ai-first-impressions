@@ -35,7 +35,7 @@ const Home = () => {
         </ul>
         {/* 모션 이미지 */}
         <div className="motionImg">
-          <img className="robo" src={bot} />
+          <img className="robo" src={bot} alt="" />
         </div>
         {/* 제목과 btn */}
         <div className="bottomText">
