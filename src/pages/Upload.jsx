@@ -114,10 +114,10 @@ function Upload() {
         </div>
         {/* 로봇 이미지 영역 */}
         <div className="RoboBox">
-          <img src={background} alt="" />
+          <img src={background} alt="background" />
           {/* 모션 이미지 */}
           <div className="motionImg">
-            <img className="robo" src={robo} alt="" />
+            <img className="robo" src={robo} alt="upload robot" />
           </div>
         </div>
       </div>

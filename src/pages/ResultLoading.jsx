@@ -73,12 +73,12 @@ const ResultLoading = ({}) => {
               <img
                 src={loadingAnimation}
                 className="loading-animation"
-                alt=""
+                alt="loading"
               />
               <img
                 src={loadingBot}
                 className="loading-bot box bounce-1"
-                alt=""
+                alt="loading robot"
               />
               <div className="btn btn-1">Loading...</div>
             </div>

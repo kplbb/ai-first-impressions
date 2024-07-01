@@ -10,7 +10,7 @@ const NoMatch = () => {
             src={loadingAnimation}
             className=""
             style={{ width: '70%' }}
-            alt=""
+            alt="loading robot"
           />
           <div className="HeadText">
             404 <br />

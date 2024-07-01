@@ -109,7 +109,7 @@ const Result = () => {
           <div className="HeadText">당신의 첫인상은?</div>
           <ResultWordCloud />
           <div className="user-img">
-            <img src={loadingBot} alt="" />
+            <img src={loadingBot} alt="loading bot" />
           </div>
 
           <div className="res-container">
